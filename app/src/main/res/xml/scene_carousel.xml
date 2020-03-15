@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/base"
+        motion:constraintSetEnd="@id/next"
+        motion:motionInterpolator="easeInOut">
+
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchAnchorId="@+id/image_current"
+            motion:touchAnchorSide="left" />
+
+    </Transition>
+
+    <Transition
+        motion:constraintSetStart="@id/base"
+        motion:constraintSetEnd="@id/prev"
+        motion:motionInterpolator="easeInOut">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@+id/image_current"
+            motion:touchAnchorSide="right" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/base">
+
+        <Constraint
+            android:id="@id/carousel_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="H,4:3"/>
+
+        <Constraint
+            android:id="@id/image_current"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toStartOf="@id/carousel_container"
+            motion:layout_constraintEnd_toEndOf="@id/carousel_container"
+            motion:layout_constraintTop_toTopOf="@id/carousel_container"
+            motion:layout_constraintBottom_toBottomOf="@id/carousel_container"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+        <Constraint
+            android:id="@id/image_prev"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            motion:layout_constraintEnd_toStartOf="@id/image_current"
+            motion:layout_constraintTop_toTopOf="@id/image_current"
+            motion:layout_constraintBottom_toBottomOf="@id/image_current"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+        <Constraint
+            android:id="@id/image_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            motion:layout_constraintStart_toEndOf="@id/image_current"
+            motion:layout_constraintTop_toTopOf="@id/image_current"
+            motion:layout_constraintBottom_toBottomOf="@id/image_current"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/next">
+
+        <Constraint
+            android:id="@id/carousel_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="H,4:3"/>
+
+        <Constraint
+            android:id="@id/image_current"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            motion:layout_constraintEnd_toStartOf="@id/image_next"
+            motion:layout_constraintTop_toTopOf="@id/image_next"
+            motion:layout_constraintBottom_toBottomOf="@id/image_next"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+        <Constraint
+            android:id="@id/image_prev"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            motion:layout_constraintEnd_toStartOf="@id/image_current"
+            motion:layout_constraintTop_toTopOf="@id/image_current"
+            motion:layout_constraintBottom_toBottomOf="@id/image_current"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+        <Constraint
+            android:id="@id/image_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toStartOf="@id/carousel_container"
+            motion:layout_constraintEnd_toEndOf="@id/carousel_container"
+            motion:layout_constraintTop_toTopOf="@id/carousel_container"
+            motion:layout_constraintBottom_toBottomOf="@id/carousel_container"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/prev">
+
+        <Constraint
+            android:id="@id/carousel_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="H,4:3"/>
+
+        <Constraint
+            android:id="@id/image_current"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            motion:layout_constraintStart_toEndOf="@id/image_prev"
+            motion:layout_constraintTop_toTopOf="@id/image_prev"
+            motion:layout_constraintBottom_toBottomOf="@id/image_prev"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+        <Constraint
+            android:id="@id/image_prev"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintStart_toStartOf="@id/carousel_container"
+            motion:layout_constraintEnd_toEndOf="@id/carousel_container"
+            motion:layout_constraintTop_toTopOf="@id/carousel_container"
+            motion:layout_constraintBottom_toBottomOf="@id/carousel_container"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+        <Constraint
+            android:id="@id/image_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            motion:layout_constraintStart_toEndOf="@id/image_current"
+            motion:layout_constraintTop_toTopOf="@id/image_current"
+            motion:layout_constraintBottom_toBottomOf="@id/image_current"
+            motion:layout_constraintDimensionRatio="1:1" />
+
+    </ConstraintSet>
+
+</MotionScene>
