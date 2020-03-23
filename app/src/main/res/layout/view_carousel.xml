@@ -15,20 +15,20 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
-        android:background="@android:color/holo_green_dark"/>
+        android:background="@color/carousel_base"/>
 
     <ImageView
         android:id="@+id/image_prev"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
-        android:background="@android:color/holo_red_dark"/>
+        android:background="@color/carousel_prev"/>
 
     <ImageView
         android:id="@+id/image_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
-        android:background="@android:color/holo_blue_dark"/>
+        android:background="@color/carousel_next"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
